@@ -18,6 +18,10 @@ module.exports = {
         allowNull: false, // NOT NULL
         type: Sequelize.STRING,
       },
+      nickname: {
+        allowNull: false, // NOT NULL
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false, // NOT NULL
         type: Sequelize.DATE,
