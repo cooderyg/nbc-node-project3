@@ -23,7 +23,7 @@ router.post("/comments/:postId", authMiddleware, async (req, res) => {
     });
     res.status(201).json({ data: commentResult });
   } catch (error) {
-    res.status(400).json({ errorMessage: error });
+    res.status(400).json({ message: error });
   }
 });
 // 댓글 등록 끝
@@ -41,7 +41,7 @@ router.get("/comments/:postId", async (req, res) => {
     });
     res.status(200).json({ data: comments });
   } catch (error) {
-    res.status(400).json({ errorMessage: error });
+    res.status(400).json({ message: error });
   }
 });
 // 댓글 목록 조회 끝

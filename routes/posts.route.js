@@ -33,7 +33,7 @@ router.get("/posts", async (req, res) => {
     });
     res.status(200).json({ data: posts });
   } catch (error) {
-    res.status(400).json({ errorMessage: error });
+    res.status(400).json({ message: error });
   }
 });
 // 게시글 목록 조회 끝
@@ -53,7 +53,7 @@ router.get("/posts/:postId", async (req, res) => {
     }
     res.status(200).json({ data: post });
   } catch (error) {
-    res.status(400).json({ errorMessage: error });
+    res.status(400).json({ message: error });
   }
 });
 // 게시글 상세 조회 끝
