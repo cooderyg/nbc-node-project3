@@ -23,7 +23,7 @@ router.post("/comments/:postId", authMiddleware, async (req, res) => {
     });
     res.status(201).json({ data: commentResult });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
   }
 });
 // 댓글 등록 끝
@@ -41,7 +41,7 @@ router.get("/comments/:postId", async (req, res) => {
     });
     res.status(200).json({ data: comments });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
   }
 });
 // 댓글 목록 조회 끝
@@ -66,7 +66,7 @@ router.put("/comments/:commentId", authMiddleware, async (req, res) => {
       return;
     }
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
     return;
   }
 
@@ -82,7 +82,7 @@ router.put("/comments/:commentId", authMiddleware, async (req, res) => {
     );
     res.status(200).json({ data: "댓글이 수정되었습니다." });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
   }
 });
 // 댓글 수정 끝
@@ -104,7 +104,7 @@ router.delete("/comments/:commentId", authMiddleware, async (req, res) => {
       return;
     }
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
     return;
   }
 
@@ -117,7 +117,7 @@ router.delete("/comments/:commentId", authMiddleware, async (req, res) => {
     });
     res.status(200).json({ data: "댓글이 삭제되었습니다." });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
   }
 });
 // 댓글 삭제 끝

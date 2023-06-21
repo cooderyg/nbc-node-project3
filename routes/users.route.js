@@ -39,7 +39,7 @@ router.post("/signup", async (req, res) => {
       return;
     }
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
     return;
   }
 
@@ -58,7 +58,7 @@ router.post("/signup", async (req, res) => {
     });
     res.status(201).json({ message: "회원가입이 완료되었습니다" });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
   }
 });
 // 회원가입 끝
@@ -94,7 +94,7 @@ router.post("/login", async (req, res) => {
     // response 할당
     res.status(200).json({ message: "로그인에 성공하였습니다." });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
   }
 });
 // 로그인 끝
@@ -118,7 +118,7 @@ router.get("/users", authMiddleware, async (req, res) => {
 
     res.status(200).json({ data: user });
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(500).json({ message: error });
   }
 });
 // 내 정보 조회 끝
